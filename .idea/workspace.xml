@@ -6,11 +6,54 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe418b6-b180-4e1f-b9ee-0ee736ca713d" name="Default Changelist" comment="" />
+    <list default="true" id="6fe418b6-b180-4e1f-b9ee-0ee736ca713d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_annotation_javax_annotation_api_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_4_0_b34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_external_javax_inject_2_4_0_b34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_api_2_4_0_b34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_locator_2_4_0_b34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_hk2_utils_2_4_0_b34.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_22_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_core_jersey_common_2_22_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_6.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/DatabaseProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/LoginControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/programmeeropdracht.iml" beforeDir="false" afterPath="$PROJECT_DIR$/programmeeropdracht.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginRespondeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginRespondeDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginRespondeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginRespondeDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginDTO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginRespondeDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginRespondeDTO.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="programmeeropdracht" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -20,7 +63,12 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/programmeeropdracht" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -45,9 +93,20 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../apps/exercise-jdbc/pom.xml" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -161,14 +220,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1584002610593</updated>
-      <workItem from="1584002613341" duration="1184000" />
+      <workItem from="1584002613341" duration="3812000" />
+      <workItem from="1584006469903" duration="2888000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/programmeeropdracht" />
+    </ignored-roots>
+    <option name="LAST_COMMIT_MESSAGE" value="" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="71" key="#Project_Structure" timestamp="1584008230492">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584008230492" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584002740975">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -177,5 +247,69 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="758" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584003213175" />
+    <state x="248" y="7" key="CommitChangelistDialog2" timestamp="1584008138717">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="248" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584008138717" />
+    <state x="518" y="225" key="FileChooserDialogImpl" timestamp="1584008197556">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="518" y="225" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584008197556" />
+    <state width="1024" height="195" key="GridCell.Tab.0.bottom" timestamp="1584007723292">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584007723292" />
+    <state width="1024" height="195" key="GridCell.Tab.0.center" timestamp="1584007723291">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1584007723291" />
+    <state width="1024" height="195" key="GridCell.Tab.0.left" timestamp="1584007723291">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1584007723291" />
+    <state width="1024" height="195" key="GridCell.Tab.0.right" timestamp="1584007723291">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1584007723291" />
+    <state width="1024" height="195" key="GridCell.Tab.1.bottom" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.1.center" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.1.left" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.1.right" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.2.bottom" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.2.center" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.2.left" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state width="1024" height="195" key="GridCell.Tab.2.right" timestamp="1584007723083">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1024" height="195" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1584007723083" />
+    <state x="277" y="55" width="1134" height="714" key="SettingsEditor" timestamp="1584008225793">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="277" y="55" width="1134" height="714" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1584008225793" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1584006470344">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1584006470344" />
   </component>
 </project>

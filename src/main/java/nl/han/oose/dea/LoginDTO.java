@@ -1,8 +1,8 @@
 package nl.han.oose.dea;
 
 public class LoginDTO {
-    String user;
-    String password;
+    private String user;
+    private String password;
 
     public void setUser(String user) {
         this.user = user;
