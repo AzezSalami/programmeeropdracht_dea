@@ -9,7 +9,7 @@
         <module name="programmeeropdracht" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="13">
       <module name="programmeeropdracht" target="1.8" />
     </bytecodeTargetLevel>
   </component>

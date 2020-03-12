@@ -1,8 +1,8 @@
 package nl.han.oose.dea;
 
 public class LoginRespondeDTO {
-    String token;
-    String user;
+    private String token;
+    private String user;
 
     public String getToken() {
         return token;
