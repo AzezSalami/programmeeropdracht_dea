@@ -1,4 +1,4 @@
-import nl.han.oose.dea.LoginController;
+import nl.han.oose.dea.controllers.LoginController;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

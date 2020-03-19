@@ -13,7 +13,8 @@ public class DatabaseProperties {
         properties = new Properties();
         try {
             properties.load(getClass().getClassLoader().getResourceAsStream("database.properties"));
-        } catch (IOException e) {
+            Class.forName(properties.getProperty("driver"));
+        } catch (IOException | ClassNotFoundException e) {
             logger.log(Level.SEVERE, "Can't access property file database.properties", e);
         }
     }
@@ -21,7 +22,7 @@ public class DatabaseProperties {
 
     public String connectionString()
     {
-        return properties.getProperty("databaseurl") + "?user=" + properties.getProperty("user") + "&password=" + properties.getProperty("password") + "&serverTimezone=UTC";
+        return properties.getProperty("connectionString");
     }
 
 }
