@@ -4,6 +4,7 @@ import nl.han.oose.dea.datasource.dao.PlaylistDAO;
 import nl.han.oose.dea.controllers.dto.PlaylistDTO;
 import nl.han.oose.dea.datasource.DatabaseProperties;
 
+import javax.inject.Inject;
 import javax.websocket.server.PathParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -12,9 +13,14 @@ import java.util.ArrayList;
 
 @Path("/playlists")
 public class PlaylistController {
-    DatabaseProperties databaseProperties = new DatabaseProperties();
-    PlaylistDAO playlistDAO = new PlaylistDAO(databaseProperties);
-    
+ //   DatabaseProperties databaseProperties = new DatabaseProperties();
+    PlaylistDAO playlistDAO ;//= new PlaylistDAO(databaseProperties);
+
+    @Inject
+    public void setPlaylistDAO(PlaylistDAO playlistDAO ){
+        this.playlistDAO = playlistDAO;
+    }
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response acquirePlaylists(@QueryParam("token") String token){

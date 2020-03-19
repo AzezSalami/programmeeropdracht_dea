@@ -6,51 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6fe418b6-b180-4e1f-b9ee-0ee736ca713d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_199.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/PlaylistController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/dto/PlaylistDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/dto/PlaylistsDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/LoginDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/PlaylistDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/programmeeropdracht_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/programmeeropdracht_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_6_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_4_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_0.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_1_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programmeeropdracht.iml" beforeDir="false" afterPath="$PROJECT_DIR$/programmeeropdracht.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/dto/LoginDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/LoginRespondeDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/dto/LoginRespondeDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/DatabaseProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/DatabaseProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/LoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/LoginControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/LoginRespondeDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/DatabaseProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/DatabaseProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/beans.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/beans.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/database.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/database.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/LoginRespondeDTO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/DatabaseProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/DatabaseProperties.class" afterDir="false" />
-    </list>
+    <list default="true" id="6fe418b6-b180-4e1f-b9ee-0ee736ca713d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -263,7 +219,7 @@
       <workItem from="1584441253092" duration="267000" />
       <workItem from="1584441585970" duration="8954000" />
       <workItem from="1584450652438" duration="3794000" />
-      <workItem from="1584461290730" duration="23834000" />
+      <workItem from="1584461290730" duration="24094000" />
     </task>
     <servers />
   </component>
