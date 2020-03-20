@@ -24,15 +24,17 @@ public class TrackController {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getAllTracks(@QueryParam("forPlaylist") int forPlaylist, @QueryParam("token") String token){
+    public Response getAllTracksNotInPlaylist(@QueryParam("forPlaylist") int forPlaylist, @QueryParam("token") String token){
 
-        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracks(token, forPlaylist))).build();
+        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksNotInPlaylist(token, forPlaylist))).build();
     }
 
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{playlistId}/tracks/{trackId}")
     public Response deleteTrackFromPlaylist(@QueryParam("token") String token ,@PathParam("playlistId") int playlistId , @PathParam("trackId") int trackId){
-        return Response.ok().entity(trackDAO.deleteTrackFromPlaylist(token ,playlistId, trackId)).build();
+        trackDAO.deleteTrackFromPlaylist(token ,playlistId, trackId);
+        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksInPlaylist(token, playlistId))).build();
     }
+
 }

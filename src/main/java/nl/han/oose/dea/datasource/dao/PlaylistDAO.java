@@ -64,13 +64,14 @@ public class PlaylistDAO {
             PreparedStatement statement = connection.prepareStatement("insert into playlist values (?,?,?,?)");
             selectStatement.setString(1, token);
             ResultSet resultSet = selectStatement.executeQuery();
-            while (resultSet.next())
-            if(playlistDTO.getId() == -1 & !playlistDTO.isOwner()){
-                statement.setInt(1,resultSet.getInt("playlistId") + 1);
-                statement.setString(2,playlistDTO.getName());
-                statement.setBoolean(3,true);
-                statement.setString(4, token);
-                statement.executeUpdate();
+            while (resultSet.next()) {
+                if (playlistDTO.getId() == -1 & !playlistDTO.isOwner()) {
+                    statement.setInt(1, resultSet.getInt("playlistId") + 1);
+                    statement.setString(2, playlistDTO.getName());
+                    statement.setBoolean(3, true);
+                    statement.setString(4, token);
+                    statement.executeUpdate();
+                }
             }
         } catch (SQLException e) {
             e.printStackTrace();

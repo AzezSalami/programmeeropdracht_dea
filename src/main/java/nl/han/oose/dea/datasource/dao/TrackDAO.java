@@ -21,7 +21,7 @@ public class TrackDAO {
     public TrackDAO() {
     }
 
-    public List<TrackDTO> getAllTracks(String token, int playlistId) {
+    public List<TrackDTO> getAllTracksNotInPlaylist(String token, int playlistId) {
         List<TrackDTO> trackDTOS = new ArrayList<>();
         try {
             Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
@@ -93,6 +93,22 @@ public class TrackDAO {
             statement.setInt(3, playlistId);
             statement.executeUpdate();
 
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addTrackToPlaylist(String token, int playlistId, TrackDTO trackDTO) {
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
+            PreparedStatement selectStatement = connection.prepareStatement("select *  from playlist where token = ?");
+            PreparedStatement statement = connection.prepareStatement("insert into tracks_in_playlist values (?,?)");
+            statement.setString(1,token);
+            ResultSet resultSet = selectStatement.executeQuery();
+            while (resultSet.next()){
+                statement.setInt(1,playlistId);
+                statement.setInt(2,trackDTO.getId());
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }

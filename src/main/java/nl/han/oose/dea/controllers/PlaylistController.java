@@ -1,6 +1,7 @@
 package nl.han.oose.dea.controllers;
 
 import nl.han.oose.dea.controllers.dto.PlaylistsDTO;
+import nl.han.oose.dea.controllers.dto.TrackDTO;
 import nl.han.oose.dea.controllers.dto.TracksDTO;
 import nl.han.oose.dea.datasource.dao.PlaylistDAO;
 import nl.han.oose.dea.controllers.dto.PlaylistDTO;
@@ -70,6 +71,15 @@ public class PlaylistController {
     @Path("{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllTracksInPlaylist(@QueryParam("token") String token,@PathParam("id") int id) {
-        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracks(token, id))).build();
+        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksInPlaylist(token, id))).build();
+    }
+
+    @POST
+    @Path("{id}/tracks")
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response addTrackToPlaylist(@QueryParam("token") String token , @PathParam("playlistId") int playlistId , TrackDTO trackDTO){
+        trackDAO.addTrackToPlaylist(token ,playlistId, trackDTO);
+        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksInPlaylist(token, playlistId))).build();
     }
 }
