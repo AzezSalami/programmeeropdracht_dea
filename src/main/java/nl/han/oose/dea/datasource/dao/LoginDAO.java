@@ -5,12 +5,17 @@ import nl.han.oose.dea.datasource.DatabaseProperties;
 import java.sql.*;
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 
-public class LoginDAO {
+import javax.inject.Inject;
 
+public class LoginDAO {
     private DatabaseProperties databaseProperties;
 
-    public LoginDAO(DatabaseProperties databaseProperties) {
+    @Inject
+    public void setDatabaseProperties(DatabaseProperties databaseProperties){
         this.databaseProperties = databaseProperties;
+    }
+
+    public LoginDAO() {
     }
 
     public LoginDTO findUser(String username) {

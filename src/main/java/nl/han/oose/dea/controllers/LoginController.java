@@ -1,5 +1,6 @@
 package nl.han.oose.dea.controllers;
 
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -11,8 +12,15 @@ import nl.han.oose.dea.datasource.DatabaseProperties;
 
 @Path("/")
 public class LoginController {
-    LoginDAO loginDAO;
+    private LoginDAO loginDAO;
 
+    public LoginController() {
+    }
+
+    @Inject
+    public void setLoginDAO(LoginDAO loginDAO){
+        this.loginDAO = loginDAO;
+    }
 
     @GET
     public String hallo() {
@@ -24,8 +32,6 @@ public class LoginController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("login")
     public Response login(LoginDTO loginDTO) {
-        DatabaseProperties databaseProperties = new DatabaseProperties();
-        LoginDAO loginDAO = new LoginDAO(databaseProperties);
 
         if (loginDTO.getPassword().equals(loginDAO.findUser(loginDTO.getUser()).getPassword())) {
             LoginRespondeDTO loginRespondeDTO = new LoginRespondeDTO();
