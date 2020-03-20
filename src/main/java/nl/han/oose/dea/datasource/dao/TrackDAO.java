@@ -14,28 +14,87 @@ public class TrackDAO {
     private DatabaseProperties databaseProperties;
 
     @Inject
-    public void setDatabaseProperties(DatabaseProperties databaseProperties){
+    public void setDatabaseProperties(DatabaseProperties databaseProperties) {
         this.databaseProperties = databaseProperties;
     }
 
     public TrackDAO() {
     }
 
-//    public List<TrackDTO> getAllTracks(String token , int playlistId ){
-//        List<TrackDTO> trackDTOS = new ArrayList<>();
-//        try{
-//            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
-//            PreparedStatement statement = connection.prepareStatement("select * from track where token =?");
-//            statement.setString(1, token);
-//            ResultSet resultSet = statement.executeQuery();
-//
-//            while (resultSet.next()){
-//                trackDTOS.add( new
-//                        );
-//            }
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//        return trackDTOS;
-//    }
+    public List<TrackDTO> getAllTracks(String token, int playlistId) {
+        List<TrackDTO> trackDTOS = new ArrayList<>();
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
+            PreparedStatement statement = connection.prepareStatement(
+                    "select * from track where trackId not in (select trackId from tracks_in_playlist " +
+                            "where playlistId  in (select playlistId from playlist where token = ? and playlistId =?))");
+            statement.setString(1, token);
+            statement.setInt(2, playlistId);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                trackDTOS.add(new TrackDTO(
+                        resultSet.getInt("trackId"),
+                        resultSet.getString("title"),
+                        resultSet.getString("performer"),
+                        resultSet.getInt("duration"),
+                        resultSet.getString("album"),
+                        resultSet.getInt("playcount"),
+                        resultSet.getString("publicationDate"),
+                        resultSet.getBoolean("offlineAvailable")
+                ));
+                trackDTOS.forEach(i -> System.out.println(i.getId()));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return trackDTOS;
+    }
+
+    public List<TrackDTO> getAllTracksInPlaylist(String token, int playlistId) {
+        List<TrackDTO> trackDTOS = new ArrayList<>();
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
+            PreparedStatement statement = connection.prepareStatement(
+                    "select * from track where trackId in (select trackId from tracks_in_playlist " +
+                            "where playlistId  in (select playlistId from playlist where token = ? and playlistId =?))");
+            statement.setString(1, token);
+            statement.setInt(2, playlistId);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                trackDTOS.add(new TrackDTO(
+                        resultSet.getInt("trackId"),
+                        resultSet.getString("title"),
+                        resultSet.getString("performer"),
+                        resultSet.getInt("duration"),
+                        resultSet.getString("album"),
+                        resultSet.getInt("playcount"),
+                        resultSet.getString("publicationDate"),
+                        resultSet.getBoolean("offlineAvailable")
+                ));
+                trackDTOS.forEach(i -> System.out.println(i.getId()));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return trackDTOS;
+    }
+
+    public void deleteTrackFromPlaylist(String token, int playlistId, int trackId) {
+        try {
+            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
+            PreparedStatement statement = connection.prepareStatement(
+                    "DELETE FROM tracks_in_playlist " +
+                            "where trackId = ?" +
+                            "AND playlistId  in (select playlistId from playlist where token = ? and playlistId =?)");
+            statement.setInt(1, trackId);
+            statement.setString(2, token);
+            statement.setInt(3, playlistId);
+            statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
