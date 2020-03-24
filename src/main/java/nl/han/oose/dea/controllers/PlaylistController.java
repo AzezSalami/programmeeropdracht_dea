@@ -12,12 +12,13 @@ import javax.websocket.server.PathParam;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
+import java.util.List;
 
 @Path("/playlists")
 public class PlaylistController {
     private PlaylistDAO playlistDAO;
     private TrackDAO trackDAO;
-
 
     public PlaylistController() {
     }
@@ -41,11 +42,12 @@ public class PlaylistController {
     }
 
     @DELETE
-    @Path("{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response deletePlaylist(@QueryParam("token") String token, @PathParam("id") int id) {
         playlistDAO.deletePlaylists(token, id);
-        return Response.ok().entity(new PlaylistsDTO(playlistDAO.getPlaylists(token), 123456)).build();
+
+        return Response.ok().build();
     }
 
     @POST
@@ -58,7 +60,7 @@ public class PlaylistController {
     }
 
     @PUT
-    @Path("{id}")
+    @Path("/{id}")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response editPlaylist(@QueryParam("token") String token, @PathParam("id") int id, PlaylistDTO playlistDTO) {
@@ -71,7 +73,16 @@ public class PlaylistController {
     @Path("{id}/tracks")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllTracksInPlaylist(@QueryParam("token") String token,@PathParam("id") int id) {
-        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksInPlaylist(token, id))).build();
+        TracksDTO tracksDTO = new TracksDTO(playlistDAO.getAllTracksInPlaylist(token, id));
+        return Response.ok().entity(tracksDTO).build();
+    }
+
+    @DELETE
+    @Path("{playlistId}/tracks/{trackId}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response deleteTrackFromPlaylist(@QueryParam("token") String token , @javax.ws.rs.PathParam("playlistId") int playlistId , @javax.ws.rs.PathParam("trackId") int trackId){
+        playlistDAO.deleteTrackFromPlaylist(token ,playlistId, trackId);
+        return Response.ok().entity(new TracksDTO(playlistDAO.getAllTracksInPlaylist(token, playlistId))).build();
     }
 
     @POST
@@ -79,7 +90,8 @@ public class PlaylistController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response addTrackToPlaylist(@QueryParam("token") String token , @PathParam("playlistId") int playlistId , TrackDTO trackDTO){
-        trackDAO.addTrackToPlaylist(token ,playlistId, trackDTO);
-        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksInPlaylist(token, playlistId))).build();
+        playlistDAO.addTrackToPlaylist(token ,playlistId, trackDTO);
+        return Response.ok().entity(new TracksDTO(playlistDAO.getAllTracksInPlaylist(token, playlistId))).build();
     }
+
 }

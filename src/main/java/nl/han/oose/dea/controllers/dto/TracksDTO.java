@@ -3,20 +3,20 @@ package nl.han.oose.dea.controllers.dto;
 import java.util.List;
 
 public class TracksDTO {
-    private List<TrackDTO> Tracks;
+    private List<TrackDTO> tracks;
 
     public TracksDTO() {
     }
 
     public TracksDTO(List<TrackDTO> tracks) {
-        Tracks = tracks;
+        this.tracks = tracks;
     }
 
     public List<TrackDTO> getTracks() {
-        return Tracks;
+        return tracks;
     }
 
     public void setTracks(List<TrackDTO> tracks) {
-        Tracks = tracks;
+        this.tracks = tracks;
     }
 }

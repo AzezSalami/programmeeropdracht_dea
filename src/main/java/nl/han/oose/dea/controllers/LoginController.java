@@ -8,7 +8,6 @@ import javax.ws.rs.core.Response;
 import nl.han.oose.dea.datasource.dao.LoginDAO;
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
-import nl.han.oose.dea.datasource.DatabaseProperties;
 
 @Path("/")
 public class LoginController {
@@ -37,7 +36,7 @@ public class LoginController {
             LoginRespondeDTO loginRespondeDTO = new LoginRespondeDTO();
             loginRespondeDTO.setToken(loginDAO.findData(loginDTO.getUser()).getToken());
             loginRespondeDTO.setUser(loginDAO.findData(loginDTO.getUser()).getUser());
-            return Response.ok(loginRespondeDTO).build();
+            return Response.ok().entity(loginRespondeDTO).build();
         } else {
             return Response.status(401).build();
         }

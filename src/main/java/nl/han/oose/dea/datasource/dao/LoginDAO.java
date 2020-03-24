@@ -1,18 +1,26 @@
 package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
-import nl.han.oose.dea.datasource.DatabaseProperties;
+import nl.han.oose.dea.datasource.connection.DatabaseConnection;
+import nl.han.oose.dea.datasource.connection.DatabaseProperties;
 import java.sql.*;
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 
 import javax.inject.Inject;
 
 public class LoginDAO {
-    private DatabaseProperties databaseProperties;
+
+    private DatabaseConnection databaseConnection;
+    Connection connection;
 
     @Inject
-    public void setDatabaseProperties(DatabaseProperties databaseProperties){
-        this.databaseProperties = databaseProperties;
+    public void setDatabaseConnection(DatabaseConnection databaseConnection) throws SQLException {
+        this.databaseConnection = databaseConnection;
+        makeConnection();
+    }
+
+    private void makeConnection() throws SQLException {
+        connection = databaseConnection.getConnection();
     }
 
     public LoginDAO() {
@@ -20,7 +28,6 @@ public class LoginDAO {
 
     public LoginDTO findUser(String username) {
         try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -31,6 +38,8 @@ public class LoginDAO {
                         resultSet.getString("password")
                 );
             }
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -39,7 +48,6 @@ public class LoginDAO {
 
     public LoginRespondeDTO findData(String username) {
         try {
-            Connection connection = DriverManager.getConnection(databaseProperties.connectionString());
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -49,6 +57,8 @@ public class LoginDAO {
                         resultSet.getString("login_name")
                 );
             }
+            statement.close();
+            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
