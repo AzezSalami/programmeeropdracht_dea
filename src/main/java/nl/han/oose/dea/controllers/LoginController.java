@@ -9,7 +9,7 @@ import nl.han.oose.dea.datasource.dao.LoginDAO;
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
 
-@Path("/")
+@Path("/login")
 public class LoginController {
     private LoginDAO loginDAO;
 
@@ -21,26 +21,15 @@ public class LoginController {
         this.loginDAO = loginDAO;
     }
 
-    @GET
-    public String hallo() {
-        return "hallooooo";
-    }
-
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    @Path("login")
     public Response login(LoginDTO loginDTO) {
-
         if (loginDTO.getPassword().equals(loginDAO.findUser(loginDTO.getUser()).getPassword())) {
-            LoginRespondeDTO loginRespondeDTO = new LoginRespondeDTO();
-            loginRespondeDTO.setToken(loginDAO.findData(loginDTO.getUser()).getToken());
-            loginRespondeDTO.setUser(loginDAO.findData(loginDTO.getUser()).getUser());
+            LoginRespondeDTO loginRespondeDTO = loginDAO.findData(loginDTO.getUser());
             return Response.ok().entity(loginRespondeDTO).build();
         } else {
             return Response.status(401).build();
         }
     }
-
-
 }

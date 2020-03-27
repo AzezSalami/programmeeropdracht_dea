@@ -2,7 +2,6 @@ package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
-import nl.han.oose.dea.datasource.connection.DatabaseProperties;
 import java.sql.*;
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 

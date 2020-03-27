@@ -2,7 +2,6 @@ package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.TrackDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
-import nl.han.oose.dea.datasource.connection.DatabaseProperties;
 
 import javax.inject.Inject;
 import java.sql.*;
@@ -35,7 +34,6 @@ public class TrackDAO {
             statement.setString(1, token);
             statement.setInt(2, playlistId);
             ResultSet resultSet = statement.executeQuery();
-
             while (resultSet.next()) {
                 trackDTOS.add(new TrackDTO(
                         resultSet.getInt("trackId"),
@@ -47,7 +45,6 @@ public class TrackDAO {
                         resultSet.getString("publicationDate"),
                         resultSet.getBoolean("offlineAvailable")
                 ));
-                trackDTOS.forEach(i -> System.out.println(i.getId()));
             }
             statement.close();
             connection.close();

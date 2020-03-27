@@ -42,8 +42,6 @@ public class PlaylistDAO {
                             new ArrayList<TrackDTO>()
                 ));
             }
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -57,8 +55,6 @@ public class PlaylistDAO {
             statement.setString(1, token);
             statement.setInt(2, id);
             statement.executeUpdate();
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -80,8 +76,6 @@ public class PlaylistDAO {
                     statement.executeUpdate();
                 }
             }
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -91,14 +85,11 @@ public class PlaylistDAO {
     public void editPlaylists(String token, int id, PlaylistDTO playlistDTO){
 
         try{
-
             PreparedStatement statement = connection.prepareStatement("UPDATE playlist SET name = ? WHERE token = ? AND playlistId = ?");
             statement.setString(1,playlistDTO.getName());
             statement.setString(2, token);
             statement.setInt(3, id);
             statement.executeUpdate();
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -106,16 +97,15 @@ public class PlaylistDAO {
 
     public void addTrackToPlaylist(String token, int playlistId, TrackDTO trackDTO) {
         try {
-            PreparedStatement selectStatement = connection.prepareStatement("select *  from playlist where token = ?");
+            PreparedStatement selectStatement = connection.prepareStatement("select * from playlist where token = ?");
             PreparedStatement statement = connection.prepareStatement("insert into tracks_in_playlist values (?,?)");
-            statement.setString(1,token);
+            selectStatement.setString(1,token);
             ResultSet resultSet = selectStatement.executeQuery();
             while (resultSet.next()){
                 statement.setInt(1,playlistId);
                 statement.setInt(2,trackDTO.getId());
+                statement.executeUpdate();
             }
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -124,30 +114,25 @@ public class PlaylistDAO {
     public void deleteTrackFromPlaylist(String token, int playlistId, int trackId) {
         try {
             PreparedStatement statement = connection.prepareStatement(
-                    "DELETE FROM tracks_in_playlist " +
-                            "where trackId = ?" +
-                            "AND playlistId  in (select playlistId from playlist where token = ? and playlistId =?)");
+                    "DELETE FROM tracks_in_playlist where trackId = ? AND playlistId  in (select playlistId from playlist where token = ? AND playlistId = ?)");
             statement.setInt(1, trackId);
             statement.setString(2, token);
             statement.setInt(3, playlistId);
             statement.executeUpdate();
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public List<TrackDTO> getAllTracksInPlaylist(String token, int playlistId) {
+    public List<TrackDTO> getAllTracksInPlaylist(String token, int id) {
         List<TrackDTO> trackDTOS = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement(
                     "select * from track where trackId in (select trackId from tracks_in_playlist " +
                             "where playlistId  in (select playlistId from playlist where token = ? and playlistId =?))");
             statement.setString(1, token);
-            statement.setInt(2, playlistId);
+            statement.setInt(2, id);
             ResultSet resultSet = statement.executeQuery();
-
             while (resultSet.next()) {
                 trackDTOS.add(new TrackDTO(
                         resultSet.getInt("trackId"),
@@ -159,13 +144,24 @@ public class PlaylistDAO {
                         resultSet.getString("publicationDate"),
                         resultSet.getBoolean("offlineAvailable")
                 ));
-                trackDTOS.forEach(i -> System.out.println(i.getId()));
             }
-            statement.close();
-            connection.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return trackDTOS;
+    }
+
+    public int getLengthOfPlaylist (String token) {
+        try {
+            PreparedStatement statement = connection.prepareStatement("select sum(duration) as lengthOfPlaylist  from track where trackid in (select trackid from tracks_in_playlist where playlistId in (select playlistId from playlist where token = ?))");
+            statement.setString(1, token);
+            ResultSet resultSet = statement.executeQuery();
+            while (resultSet.next()) {
+                return resultSet.getInt("lengthOfPlaylist");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return 0;
     }
 }

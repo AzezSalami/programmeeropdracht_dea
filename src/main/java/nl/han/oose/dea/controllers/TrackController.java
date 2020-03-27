@@ -18,15 +18,15 @@ public class TrackController {
     }
 
     @Inject
-    public void setPlaylistDAO(TrackDAO trackDAO){
+    public void setTrackDAO(TrackDAO trackDAO){
         this.trackDAO = trackDAO;
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllTracksNotInPlaylist(@QueryParam("forPlaylist") int forPlaylist, @QueryParam("token") String token){
-
-        return Response.ok().entity(new TracksDTO(trackDAO.getAllTracksNotInPlaylist(token, forPlaylist))).build();
+        var tracksDTO = new TracksDTO(trackDAO.getAllTracksNotInPlaylist(token, forPlaylist));
+        return Response.ok().entity(tracksDTO).build();
     }
 
 
