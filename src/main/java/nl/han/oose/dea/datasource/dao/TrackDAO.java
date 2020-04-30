@@ -2,20 +2,28 @@ package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.TrackDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
+import nl.han.oose.dea.datasource.datamapper.TracksDataMapper;
 
 import javax.inject.Inject;
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class TrackDAO {
     private DatabaseConnection databaseConnection;
+    private TracksDataMapper tracksDataMapper;
     Connection connection;
 
     @Inject
     public void setDatabaseConnection(DatabaseConnection databaseConnection) throws SQLException {
         this.databaseConnection = databaseConnection;
         makeConnection();
+    }
+
+    @Inject
+    private void setTracksDataMapper(TracksDataMapper tracksDataMapper) {
+        this.tracksDataMapper = tracksDataMapper;
     }
 
     private void makeConnection() throws SQLException {
@@ -34,24 +42,10 @@ public class TrackDAO {
             statement.setString(1, token);
             statement.setInt(2, playlistId);
             ResultSet resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                trackDTOS.add(new TrackDTO(
-                        resultSet.getInt("trackId"),
-                        resultSet.getString("title"),
-                        resultSet.getString("performer"),
-                        resultSet.getInt("duration"),
-                        resultSet.getString("album"),
-                        resultSet.getInt("playcount"),
-                        resultSet.getString("publicationDate"),
-                        resultSet.getBoolean("offlineAvailable")
-                ));
-            }
-            statement.close();
-            connection.close();
+            return tracksDataMapper.toDTO(resultSet);
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new InternalServerErrorException();
         }
-        return trackDTOS;
     }
 
 }

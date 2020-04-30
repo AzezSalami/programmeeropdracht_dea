@@ -7,42 +7,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6fe418b6-b180-4e1f-b9ee-0ee736ca713d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/PlaylistControllerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/dto/LoginDTOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/dto/LoginRespondeDTOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/programmeeropdracht_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/programmeeropdracht_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_9_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_10_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_9_10.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_agent_1_10_5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_0_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_3_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/exceptionmappers/NotAuthorizedExceptionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/datamapper/DataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/datamapper/LoginDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/datamapper/PlaylistsDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/datamapper/TracksDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/datamapper/UserDataMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/datasource/dao/LoginDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/programmeeropdracht.iml" beforeDir="false" afterPath="$PROJECT_DIR$/programmeeropdracht.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/PlaylistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/PlaylistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/TrackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/controllers/TrackController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/LoginDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/LoginDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/PlaylistDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/PlaylistDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/TrackDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/nl/han/oose/dea/datasource/dao/TrackDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/controllers/LoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/LoginControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/controllers/PlaylistControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/java/controllers/TrackControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/TrackControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/PlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/TrackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/controllers/TrackController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/LoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/LoginControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/LoginDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/PlaylistDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/PlaylistDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/TrackDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/nl/han/oose/dea/datasource/dao/TrackDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/programmeeropdracht.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht.war" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/PlaylistController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/PlaylistController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/TrackController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/controllers/TrackController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/LoginDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/LoginDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/PlaylistDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/PlaylistDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/TrackDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/programmeeropdracht/WEB-INF/classes/nl/han/oose/dea/datasource/dao/TrackDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/controllers/LoginControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/controllers/PlaylistControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/controllers/TrackControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/nl/han/oose/dea/controllers/LoginControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/nl/han/oose/dea/controllers/LoginControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +35,7 @@
   <component name="CoverageViewManager">
     <option name="myFlattenPackages" value="true" />
     <option name="myAutoScrollToSource" value="true" />
-    <option name="myElementSize" value="234" />
+    <option name="myElementSize" value="146" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -97,8 +80,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -140,7 +123,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/nl/han/oose/dea" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../apps/workshop-cdi/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -157,42 +140,50 @@
       <recent name="nl.han.oose.dea" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="nl.han.oose.dea.datasource.datamapper" />
       <recent name="nl.han.oose.dea" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LoginControllerTest.inlogWithIncorrectAccount">
-    <configuration name="LoginControllerTest.inlogWithIncorrectAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.LoginDAOTest.findUserTester">
+    <configuration name="All in programmeeropdracht" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="programmeeropdracht" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginDAOTest.findUserTester" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="programmeeropdracht" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.han.oose.dea.controllers.*" />
+          <option name="PATTERN" value="nl.han.oose.dea.datasource.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.controllers.LoginControllerTest" />
-      <option name="METHOD_NAME" value="inlogWithIncorrectAccount" />
+      <option name="PACKAGE_NAME" value="nl.han.oose.dea.datasource.dao" />
+      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.datasource.dao.LoginDAOTest" />
+      <option name="METHOD_NAME" value="findUserTester" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="nl.han.oose.dea in programmeeropdracht" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="programmeeropdracht" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.han.oose.dea.controllers.*" />
+          <option name="PATTERN" value="nl.han.oose.dea.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.controllers.PlaylistControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="nl.han.oose.dea" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistControllerTest.addTrackToPlaylistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="nl.han.oose.dea.controllers in programmeeropdracht" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="programmeeropdracht" />
       <extension name="coverage">
         <pattern>
@@ -201,41 +192,21 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.controllers.PlaylistControllerTest" />
-      <option name="METHOD_NAME" value="addTrackToPlaylistTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaylistControllerTest.deletePlaylistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="nl.han.oose.dea.controllers.dto in programmeeropdracht" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="programmeeropdracht" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="nl.han.oose.dea.controllers.*" />
+          <option name="PATTERN" value="nl.han.oose.dea.controllers.dto.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.controllers.PlaylistControllerTest" />
-      <option name="METHOD_NAME" value="deletePlaylistTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrackControllerTest.getAllTracksNotInPlaylistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="programmeeropdracht" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nl.han.oose.dea.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers" />
-      <option name="MAIN_CLASS_NAME" value="nl.han.oose.dea.controllers.TrackControllerTest" />
-      <option name="METHOD_NAME" value="getAllTracksNotInPlaylistTest" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="nl.han.oose.dea.controllers.dto" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -313,20 +284,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.All in programmeeropdracht" />
+      <item itemvalue="JUnit.nl.han.oose.dea in programmeeropdracht" />
+      <item itemvalue="JUnit.nl.han.oose.dea.controllers.dto in programmeeropdracht" />
+      <item itemvalue="JUnit.nl.han.oose.dea.controllers in programmeeropdracht" />
+      <item itemvalue="JUnit.LoginDAOTest.findUserTester" />
       <item itemvalue="TomEE Server.TomEE 9.0.30" />
-      <item itemvalue="JUnit.PlaylistControllerTest" />
-      <item itemvalue="JUnit.PlaylistControllerTest.addTrackToPlaylistTest" />
-      <item itemvalue="JUnit.PlaylistControllerTest.deletePlaylistTest" />
-      <item itemvalue="JUnit.TrackControllerTest.getAllTracksNotInPlaylistTest" />
-      <item itemvalue="JUnit.LoginControllerTest.inlogWithIncorrectAccount" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginControllerTest.inlogWithIncorrectAccount" />
-        <item itemvalue="JUnit.TrackControllerTest.getAllTracksNotInPlaylistTest" />
-        <item itemvalue="JUnit.PlaylistControllerTest" />
-        <item itemvalue="JUnit.PlaylistControllerTest.deletePlaylistTest" />
-        <item itemvalue="JUnit.PlaylistControllerTest.addTrackToPlaylistTest" />
+        <item itemvalue="JUnit.LoginDAOTest.findUserTester" />
+        <item itemvalue="JUnit.nl.han.oose.dea.controllers in programmeeropdracht" />
+        <item itemvalue="JUnit.nl.han.oose.dea.controllers.dto in programmeeropdracht" />
+        <item itemvalue="JUnit.nl.han.oose.dea in programmeeropdracht" />
+        <item itemvalue="JUnit.All in programmeeropdracht" />
       </list>
     </recent_temporary>
   </component>
@@ -373,7 +344,18 @@
       <workItem from="1585127614207" duration="213000" />
       <workItem from="1585127947793" duration="4547000" />
       <workItem from="1585213357132" duration="798000" />
-      <workItem from="1585214203621" duration="16605000" />
+      <workItem from="1585214203621" duration="25611000" />
+      <workItem from="1585318637941" duration="1965000" />
+      <workItem from="1585660803252" duration="836000" />
+      <workItem from="1586425189736" duration="6543000" />
+      <workItem from="1586776602217" duration="1038000" />
+      <workItem from="1586778289229" duration="599000" />
+      <workItem from="1586942147913" duration="3314000" />
+      <workItem from="1587116403603" duration="3000" />
+      <workItem from="1587365410973" duration="3656000" />
+      <workItem from="1587538244081" duration="2000" />
+      <workItem from="1587720800633" duration="692000" />
+      <workItem from="1587966802583" duration="12648000" />
     </task>
     <servers />
   </component>
@@ -403,22 +385,26 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1584008230492" />
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1584703355560">
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1587968686973">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1584703355560" />
+    <state x="499" y="167" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1587968686973" />
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585127818499">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1585127818499" />
-    <state x="758" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1584699552710">
+    <state x="758" y="114" key="#com.intellij.ide.util.MemberChooser" timestamp="1587972684454">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="758" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1584699552710" />
+    <state x="758" y="114" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1587972684454" />
     <state x="312" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585243970668">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="312" y="338" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1536.824@0.0.1536.824" timestamp="1585243970668" />
+    <state x="566" y="272" width="409" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585319032556">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="566" y="272" width="409" height="287" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1585319032556" />
     <state x="566" y="293" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1585243973555">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -435,58 +421,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="248" y="7" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1584009562545" />
-    <state x="518" y="225" key="FileChooserDialogImpl" timestamp="1584975598004">
+    <state x="518" y="225" key="FileChooserDialogImpl" timestamp="1587967670990">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="518" y="225" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584975598004" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1585288249754">
+    <state x="518" y="225" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587967670990" />
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585288249754" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1585288249754">
+    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1585288249754" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1585288249754">
+    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1585288249754" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1585288249754">
+    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1585288249754" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1585288249755">
+    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585288249755" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1585288249755">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1585288249755" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1585288249754">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1585288249754" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1585288249755">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1588066378473">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1585288249755" />
-    <state width="1024" height="143" key="GridCell.Tab.2.bottom" timestamp="1585245539426">
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1588066378473" />
+    <state width="1024" height="80" key="GridCell.Tab.2.bottom" timestamp="1588066378468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="143" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1585245539426" />
-    <state width="1024" height="143" key="GridCell.Tab.2.center" timestamp="1585245539426">
+    <state width="1024" height="80" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588066378468" />
+    <state width="1024" height="80" key="GridCell.Tab.2.center" timestamp="1588066378468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="143" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1585245539426" />
-    <state width="1024" height="143" key="GridCell.Tab.2.left" timestamp="1585245539426">
+    <state width="1024" height="80" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1588066378468" />
+    <state width="1024" height="80" key="GridCell.Tab.2.left" timestamp="1588066378468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="143" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1585245539426" />
-    <state width="1024" height="143" key="GridCell.Tab.2.right" timestamp="1585245539426">
+    <state width="1024" height="80" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1588066378468" />
+    <state width="1024" height="80" key="GridCell.Tab.2.right" timestamp="1588066378468">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="143" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1585245539426" />
+    <state width="1024" height="80" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1588066378468" />
     <state width="1024" height="156" key="GridCell.Tab.3.bottom" timestamp="1585228209170">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -511,14 +497,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="584" y="190" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1584518341382" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1585214205219">
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587966807257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1585214205219" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587966807257" />
     <state x="463" y="144" width="609" height="536" key="find.popup" timestamp="1584859067777">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="144" width="609" height="536" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1584859067777" />
+    <state x="209" y="33" key="new project wizard" timestamp="1585318304593">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1585318304593" />
     <state x="475" y="41" key="refactoring.ChangeSignatureDialog" timestamp="1584964954472">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -527,28 +517,27 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1585234394772" />
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1585234398062">
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587973811266">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1585234398062" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/test/java/nl/han/oose/dea/controllers/LoginControllerTest.java</url>
-          <line>51</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="430" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1587973811266" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/programmeeropdracht$PlaylistControllerTest_deletePlaylistTest.ic" NAME="PlaylistControllerTest.deletePlaylistTest Coverage Results" MODIFIED="1585243588592" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>controllers.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/programmeeropdracht$PlaylistControllerTest.ic" NAME="PlaylistControllerTest Coverage Results" MODIFIED="1585243991151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/programmeeropdracht$PlaylistControllerTest.ic" NAME="PlaylistControllerTest Coverage Results" MODIFIED="1585319059004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.oose.dea.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/programmeeropdracht$All_in_programmeeropdracht.ic" NAME="All in programmeeropdracht Coverage Results" MODIFIED="1587976020337" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/programmeeropdracht$nl_han_oose_dea_controllers_dto_in_programmeeropdracht.ic" NAME="nl.han.oose.dea.controllers.dto in programmeeropdracht Coverage Results" MODIFIED="1587976099149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.oose.dea.controllers.dto.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/programmeeropdracht$nl_han_oose_dea_controllers_in_programmeeropdracht.ic" NAME="nl.han.oose.dea.controllers in programmeeropdracht Coverage Results" MODIFIED="1587976115329" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.oose.dea.controllers.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/programmeeropdracht$LoginDAOTest_findDataTester.ic" NAME="LoginDAOTest.findDataTester Coverage Results" MODIFIED="1585307256013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>nl.han.oose.dea.datasource.dao.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/programmeeropdracht$LoginControllerTest_inlogWithIncorrectAccount.ic" NAME="LoginControllerTest.inlogWithIncorrectAccount Coverage Results" MODIFIED="1585288249713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>nl.han.oose.dea.controllers.*</FILTER>

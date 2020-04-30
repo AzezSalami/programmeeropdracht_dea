@@ -1,10 +1,14 @@
 package nl.han.oose.dea.controllers;
 
 import nl.han.oose.dea.controllers.dto.LoginDTO;
+import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTOTest;
 import nl.han.oose.dea.datasource.dao.LoginDAO;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import javax.ws.rs.InternalServerErrorException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -29,7 +33,7 @@ public class LoginControllerTest {
         var token = "1234567";
 
         var loginDTO = new LoginDTO(user, password);
-        var loginRespondeDTO = new LoginRespondeDTOTest(token, user);
+        var loginRespondeDTO = new LoginRespondeDTO(token, user);
         when(mockedLoginDAO.findUser(user)).thenReturn(loginDTO);
         when(mockedLoginDAO.findData(loginDTO.getUser())).thenReturn(loginRespondeDTO);
         // Act
@@ -45,12 +49,11 @@ public class LoginControllerTest {
         var user = "azezsalami";
         var pass = "pass";
         var loginDTO = new LoginDTO(user, pass);
-        when(mockedLoginDAO.findUser(user)).thenReturn(loginDTO);
-        // Act
-        var response = sut.login(loginDTO);
-        // Assert
-        assertEquals(401, response.getStatus());
+        doThrow(InternalServerErrorException.class).when(mockedLoginDAO).findUser(loginDTO.getUser());
 
+        // Run the tes
+        // Verify the results
+        Assertions.assertThrows(InternalServerErrorException.class, () -> sut.login(loginDTO));
     }
 
 }
