@@ -1,7 +1,9 @@
 package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.PlaylistDTO;
+import nl.han.oose.dea.controllers.dto.PlaylistsDTO;
 import nl.han.oose.dea.controllers.dto.TrackDTO;
+import nl.han.oose.dea.controllers.dto.TracksDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
 import nl.han.oose.dea.datasource.connection.DatabaseProperties;
 import nl.han.oose.dea.datasource.datamapper.PlaylistsDataMapper;
@@ -51,6 +53,10 @@ public class PlaylistDAO {
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }
+    }
+
+    public PlaylistsDTO getPlaylistsDTO(String token){
+        return new PlaylistsDTO(getPlaylists(token) , getLengthOfPlaylist(token));
     }
 
     public void deletePlaylists(String token, int id) {
@@ -132,6 +138,10 @@ public class PlaylistDAO {
         }
     }
 
+    public TracksDTO getTracksDTO(String token, int id){
+        return new TracksDTO(getAllTracksInPlaylist(token, id));
+    }
+
     public int getLengthOfPlaylist(String token) {
         try {
             PreparedStatement statement = connection.prepareStatement("select sum(duration) as lengthOfPlaylist  from track where trackid in (select trackid from tracks_in_playlist where playlistId in (select playlistId from playlist where token = ?))");
@@ -145,4 +155,5 @@ public class PlaylistDAO {
         }
         return 0;
     }
+
 }

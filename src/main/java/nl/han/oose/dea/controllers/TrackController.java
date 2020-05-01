@@ -25,8 +25,8 @@ public class TrackController {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Response getAllTracksNotInPlaylist(@QueryParam("forPlaylist") int forPlaylist, @QueryParam("token") String token){
-        var tracksDTO = new TracksDTO(trackDAO.getAllTracksNotInPlaylist(token, forPlaylist));
-        return Response.ok().entity(tracksDTO).build();
+       //var tracksDTO = new TracksDTO(trackDAO.getAllTracksNotInPlaylist(token, forPlaylist));
+        return Response.ok().entity(trackDAO.getTracksDTO(token,forPlaylist)).build();
     }
 
 

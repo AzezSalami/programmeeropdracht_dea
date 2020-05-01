@@ -1,6 +1,7 @@
 package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controllers.dto.TrackDTO;
+import nl.han.oose.dea.controllers.dto.TracksDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
 import nl.han.oose.dea.datasource.datamapper.TracksDataMapper;
 
@@ -34,7 +35,6 @@ public class TrackDAO {
     }
 
     public List<TrackDTO> getAllTracksNotInPlaylist(String token, int playlistId) {
-        List<TrackDTO> trackDTOS = new ArrayList<>();
         try {
             PreparedStatement statement = connection.prepareStatement(
                     "select * from track where trackId not in (select trackId from tracks_in_playlist " +
@@ -46,6 +46,10 @@ public class TrackDAO {
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }
+    }
+
+    public TracksDTO getTracksDTO(String token, int playlistId){
+        return new TracksDTO(getAllTracksNotInPlaylist(token,playlistId));
     }
 
 }

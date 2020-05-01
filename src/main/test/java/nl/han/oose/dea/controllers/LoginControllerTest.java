@@ -2,7 +2,6 @@ package nl.han.oose.dea.controllers;
 
 import nl.han.oose.dea.controllers.dto.LoginDTO;
 import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
-import nl.han.oose.dea.controllers.dto.LoginRespondeDTOTest;
 import nl.han.oose.dea.datasource.dao.LoginDAO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
