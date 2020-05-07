@@ -11,6 +11,8 @@ import nl.han.oose.dea.datasource.datamapper.UserDataMapper;
 
 import javax.inject.Inject;
 import javax.ws.rs.InternalServerErrorException;
+import javax.ws.rs.NotAuthorizedException;
+import javax.ws.rs.core.Response;
 
 public class LoginDAO {
 
@@ -63,4 +65,11 @@ public class LoginDAO {
         }
     }
 
+    public LoginRespondeDTO validateInfo(LoginDTO loginDTO) {
+        if (loginDTO.getPassword().equals(findUser(loginDTO.getUser()).getPassword())) {
+            return findData(loginDTO.getUser());
+        } else {
+            throw new NotAuthorizedException("username or password is not correct");
+        }
+    }
 }

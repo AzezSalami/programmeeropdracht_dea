@@ -16,6 +16,7 @@ public class LoginControllerTest {
     private LoginController sut;
     private LoginDAO mockedLoginDAO;
     private static final int HTTP_OK = 200;
+    private static final int HTTP_Unauthorized = 401;
 
     @BeforeEach
     public void setup() {
@@ -25,7 +26,7 @@ public class LoginControllerTest {
     }
 
     @Test
-    public void inlogWithCorrectAccount() {
+    public void inlogWithCorrectAccountTestStatus() {
         // Arrange
         var  user = "azezsalami";
         var  password = "password";
@@ -33,13 +34,27 @@ public class LoginControllerTest {
 
         var loginDTO = new LoginDTO(user, password);
         var loginRespondeDTO = new LoginRespondeDTO(token, user);
-        when(mockedLoginDAO.findUser(user)).thenReturn(loginDTO);
-        when(mockedLoginDAO.findData(loginDTO.getUser())).thenReturn(loginRespondeDTO);
+        when(mockedLoginDAO.validateInfo(loginDTO)).thenReturn(loginRespondeDTO);
+        // Act
+        var response = sut.login(loginDTO);
+        // Assert
+        assertEquals(HTTP_OK, response.getStatus());
+    }
+
+    @Test
+    public void inlogWithCorrectAccountTestEntity() {
+        // Arrange
+        var  user = "azezsalami";
+        var  password = "password";
+        var token = "1234567";
+
+        var loginDTO = new LoginDTO(user, password);
+        var loginRespondeDTO = new LoginRespondeDTO(token, user);
+        when(mockedLoginDAO.validateInfo(loginDTO)).thenReturn(loginRespondeDTO);
         // Act
         var response = sut.login(loginDTO);
         // Assert
         assertEquals(loginRespondeDTO, response.getEntity());
-        assertEquals(HTTP_OK, response.getStatus());
     }
 
     @Test
@@ -48,10 +63,9 @@ public class LoginControllerTest {
         var user = "azezsalami";
         var pass = "pass";
         var loginDTO = new LoginDTO(user, pass);
-        doThrow(InternalServerErrorException.class).when(mockedLoginDAO).findUser(loginDTO.getUser());
+        doThrow(InternalServerErrorException.class).when(mockedLoginDAO).validateInfo(loginDTO);
 
-        // Run the tes
-        // Verify the results
+        // Assert
         Assertions.assertThrows(InternalServerErrorException.class, () -> sut.login(loginDTO));
     }
 

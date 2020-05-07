@@ -15,7 +15,6 @@ import javax.ws.rs.core.Response;
 @Path("/playlists")
 public class PlaylistController {
     private PlaylistDAO playlistDAO;
-    private TrackDAO trackDAO;
 
     public PlaylistController() {
     }
@@ -23,11 +22,6 @@ public class PlaylistController {
     @Inject
     public void setPlaylistDAO(PlaylistDAO playlistDAO) {
         this.playlistDAO = playlistDAO;
-    }
-
-    @Inject
-    public void setTrackDAO(TrackDAO trackDAO) {
-        this.trackDAO = trackDAO;
     }
 
     @GET
@@ -49,7 +43,7 @@ public class PlaylistController {
     @Consumes({MediaType.APPLICATION_JSON})
     public Response addPlaylist(@QueryParam("token") String token, PlaylistDTO playlistDTO) {
         playlistDAO.addPlaylists(token, playlistDTO);
-        return Response.ok(playlistDAO.getPlaylistsDTO(token)).build();
+        return Response.ok().entity(playlistDAO.getPlaylistsDTO(token)).build();
     }
 
     @PUT

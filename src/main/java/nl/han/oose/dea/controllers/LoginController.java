@@ -25,11 +25,6 @@ public class LoginController {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response login(LoginDTO loginDTO) {
-        if (loginDTO.getPassword().equals(loginDAO.findUser(loginDTO.getUser()).getPassword())) {
-            LoginRespondeDTO loginRespondeDTO = loginDAO.findData(loginDTO.getUser());
-            return Response.ok().entity(loginRespondeDTO).build();
-        } else {
-            return Response.status(401).build();
-        }
+        return Response.ok().entity(loginDAO.validateInfo(loginDTO)).build();
     }
 }

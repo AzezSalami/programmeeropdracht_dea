@@ -1,13 +1,12 @@
 package nl.han.oose.dea.controllers;
 
-import nl.han.oose.dea.controllers.dto.PlaylistDTO;
-import nl.han.oose.dea.controllers.dto.PlaylistsDTO;
-import nl.han.oose.dea.controllers.dto.TrackDTO;
-import nl.han.oose.dea.controllers.dto.TracksDTO;
+import nl.han.oose.dea.controllers.dto.*;
 import nl.han.oose.dea.datasource.dao.PlaylistDAO;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.ws.rs.InternalServerErrorException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -101,7 +100,7 @@ public class PlaylistControllerTest {
     }
 
     @Test
-    public void addPlaylistTest(){
+    public void addPlaylistTestStatus(){
         // Arrange
         int id = playlistDTO.getId();
         // Act
@@ -113,7 +112,18 @@ public class PlaylistControllerTest {
     }
 
     @Test
-    public void editPlaylistTest(){
+    public void addPlaylistTestEntity(){
+        // Arrange
+        int id = playlistDTO.getId();
+        when(mockedPlaylistDAO.getPlaylistsDTO(TOKEN)).thenReturn(playlistsDTO);
+        // Act
+        var response = sut.addPlaylist(TOKEN,playlistDTO);
+        // Assert
+        verify(mockedPlaylistDAO).addPlaylists(TOKEN,playlistDTO);
+        assertEquals(playlistsDTO,response.getEntity());
+    }
+    @Test
+    public void editPlaylistTestStatus(){
         // Arrange
         int id = playlistDTO.getId();
         // Act
@@ -121,6 +131,19 @@ public class PlaylistControllerTest {
         // Assert
         verify(mockedPlaylistDAO).editPlaylists(TOKEN,id,playlistDTO);
         assertEquals(HTTP_OK,response.getStatus());
+
+    }
+
+    @Test
+    public void editPlaylistTestEntity(){
+        // Arrange
+        int id = playlistDTO.getId();
+        when(mockedPlaylistDAO.getPlaylistsDTO(TOKEN)).thenReturn(playlistsDTO);
+        // Act
+        var response = sut.editPlaylist(TOKEN,id,playlistDTO);
+        // Assert
+        verify(mockedPlaylistDAO).editPlaylists(TOKEN,id,playlistDTO);
+        assertEquals(playlistsDTO,response.getEntity());
 
     }
 
@@ -177,6 +200,20 @@ public class PlaylistControllerTest {
     }
 
     @Test
+    public void deleteTrackFromPlaylistTestThrow() {
+        // Arrange
+        var id = playlistDTO.getId();
+        var trackId = 3;
+        when(mockedPlaylistDAO.getTracksDTO(TOKEN,id)).thenReturn(tracksDTO);
+
+        doThrow(InternalServerErrorException.class).when(mockedPlaylistDAO).deleteTrackFromPlaylist(TOKEN,id,trackId);
+
+        // Run the tes
+        // Verify the results
+        Assertions.assertThrows(InternalServerErrorException.class, () -> sut.deleteTrackFromPlaylist(TOKEN,id,trackId));
+    }
+
+    @Test
     public void addTrackToPlaylistTestStatus(){
         // Arrange
         var track = new TrackDTO(3,"Ocean and a rock","Lisa Hannigan",337,"Sea sew",0,null,false);
@@ -200,5 +237,17 @@ public class PlaylistControllerTest {
         // Assert
         verify(mockedPlaylistDAO).addTrackToPlaylist(TOKEN,id,track);
         assertEquals(tracksDTO,response.getEntity());
+    }
+
+    @Test
+    public void addTrackToPlaylistTestThrow() {
+        // Arrange
+        var track = new TrackDTO(7,"Ocean and a rock","Lisa Hannigan",337,"Sea sew",0,null,false);
+        var id = playlistDTO.getId();
+        doThrow(InternalServerErrorException.class).when(mockedPlaylistDAO).addTrackToPlaylist(TOKEN, id,track);
+
+        // Run the tes
+        // Verify the results
+        Assertions.assertThrows(InternalServerErrorException.class, () -> sut.addTrackToPlaylist(TOKEN, id,track));
     }
 }

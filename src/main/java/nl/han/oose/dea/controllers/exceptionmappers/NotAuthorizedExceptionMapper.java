@@ -9,6 +9,6 @@ import javax.ws.rs.ext.Provider;
 public class NotAuthorizedExceptionMapper implements ExceptionMapper<NotAuthorizedException> {
     @Override
     public Response toResponse(NotAuthorizedException e) {
-        return Response.status(409).build();
+        return Response.status(401).build();
     }
 }
