@@ -1,7 +1,6 @@
 package nl.han.oose.dea.datasource.datamapper;
 
-import nl.han.oose.dea.controllers.dto.LoginDTO;
-import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
+import nl.han.oose.dea.controller.dto.LoginRespondeDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

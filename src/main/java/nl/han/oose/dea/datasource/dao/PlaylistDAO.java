@@ -1,18 +1,16 @@
 package nl.han.oose.dea.datasource.dao;
 
-import nl.han.oose.dea.controllers.dto.PlaylistDTO;
-import nl.han.oose.dea.controllers.dto.PlaylistsDTO;
-import nl.han.oose.dea.controllers.dto.TrackDTO;
-import nl.han.oose.dea.controllers.dto.TracksDTO;
+import nl.han.oose.dea.controller.dto.PlaylistDTO;
+import nl.han.oose.dea.controller.dto.PlaylistsDTO;
+import nl.han.oose.dea.controller.dto.TrackDTO;
+import nl.han.oose.dea.controller.dto.TracksDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
-import nl.han.oose.dea.datasource.connection.DatabaseProperties;
 import nl.han.oose.dea.datasource.datamapper.PlaylistsDataMapper;
 import nl.han.oose.dea.datasource.datamapper.TracksDataMapper;
 
 import javax.inject.Inject;
 import javax.ws.rs.InternalServerErrorException;
 import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class PlaylistDAO {

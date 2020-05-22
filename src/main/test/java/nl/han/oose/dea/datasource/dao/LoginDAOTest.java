@@ -1,110 +1,108 @@
 package nl.han.oose.dea.datasource.dao;
 
-import nl.han.oose.dea.controllers.LoginController;
-import nl.han.oose.dea.controllers.dto.LoginDTO;
-import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
+import nl.han.oose.dea.controller.dto.LoginDTO;
+import nl.han.oose.dea.controller.dto.LoginRespondeDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
 import nl.han.oose.dea.datasource.datamapper.LoginDataMapper;
 import nl.han.oose.dea.datasource.datamapper.UserDataMapper;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import javax.ws.rs.InternalServerErrorException;
 import java.sql.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class LoginDAOTest {
+    public static final String USERNAME = "azezsalami";
     private LoginDAO sut;
-    private DatabaseConnection mockedDatabaseConnection;
-    private LoginDataMapper mockedLoginDataMapper;
-    private UserDataMapper mockedUserDataMapper;
-    private Connection connection;
-
-    private Connection getH2Connection(){
-        try {
-            Class.forName("org.h2.Driver");
-            return DriverManager.getConnection("jdbc:h2:~/test", "sa", "");
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+    private DatabaseConnection databaseConnection;
+    private PreparedStatement statement;
+    private LoginDataMapper loginDataMapper;
+    private UserDataMapper userDataMapper;
 
     @BeforeEach
     public void setup() throws SQLException {
         sut = new LoginDAO();
+        databaseConnection = mock(DatabaseConnection.class);
+        Connection connection = mock(Connection.class);
+        statement = mock(PreparedStatement.class);
+        ResultSet resultSet = mock(ResultSet.class);
+        loginDataMapper = mock(LoginDataMapper.class);
+        userDataMapper = mock(UserDataMapper.class);
+        sut.setDatabaseConnection(databaseConnection);
+        sut.setLoginDataMapper(loginDataMapper);
+        sut.setUserDataMapper(userDataMapper);
+        when(databaseConnection.getConnection()).thenReturn(connection);
 
-        mockedDatabaseConnection = mock(DatabaseConnection.class);
-        sut.setDatabaseConnection(mockedDatabaseConnection);
+        sut.setDatabaseConnection(databaseConnection);
+        when(connection.prepareStatement(any())).thenReturn(statement);
+        when(statement.executeQuery()).thenReturn(resultSet);
 
-        mockedLoginDataMapper = mock(LoginDataMapper.class);
-        sut.setLoginDataMapper(mockedLoginDataMapper);
-
-        mockedUserDataMapper = mock(UserDataMapper.class);
-        sut.setUserDataMapper(mockedUserDataMapper);
-        try {
-            connection = getH2Connection();
-            String SQL = "DROP TABLE IF EXISTS `users`;" +
-                    "\n" +
-                    "CREATE TABLE users (" +
-                    "  login_name   varchar(45) NOT NULL," +
-                    "  password     varchar(45) NOT NULL," +
-                    "  token        varchar(45) NOT NULL," +
-                    "  username     varchar(45) NOT NULL," +
-                    "  PRIMARY KEY (`login_name`)" +
-                    ");";
-            PreparedStatement preparedStatement = connection.prepareStatement(SQL);
-            preparedStatement.executeUpdate();
-
-
-            when(mockedDatabaseConnection.getConnection()).thenReturn(connection);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 
-//    @Test
-//    public void testLoginDAOfindUserOpensConnection() throws SQLException {
-//        // Arrange
-//        // Act
-//        sut.findUser("azezsalami");
-//        // Assert
-//        verify(mockedDatabaseConnection).getConnection();
-//    }
-//
-//    @Test
-//    public void testLoginDAOfindUserUsesMapper() throws SQLException {
-//        // Arrange
-//        String username = "azezsalami";
-//        String password = "password";
-//        LoginDTO loginDTO = new LoginDTO(username, password);
-//        PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
-//        statement.setString(1, username);
-//        ResultSet resultSet = statement.executeQuery();
-//        when(mockedLoginDataMapper.toDTO(resultSet)).thenReturn(loginDTO);
-//        // Act
-//        LoginDTO result = sut.findUser(username);
-//        // Assert
-//        verify(mockedLoginDataMapper).toDTO(any(ResultSet.class));
-//        assertEquals(result,loginDTO);
-//    }
+    @Test
+    public void tesSetDatabaseConnectionCallsGetConnection() throws SQLException {
+        // Act
+        sut.findUser(USERNAME);
+        // Assert
+        verify(databaseConnection).getConnection();
+    }
 
-//    @Test
-//    public void findUserTest() throws SQLException {
-//        // Arrange
-//        String username = "azezsalami";
-//        String password = "password";
-//        LoginDTO loginDTO = new LoginDTO(username, password);
-//        when(mockedDatabaseConnection.getConnection()).thenReturn(connection);
-//        PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
-//        statement.setString(1, username);
-//        ResultSet resultSet = statement.executeQuery();
-//        when(mockedLoginDataMapper.toDTO(resultSet)).thenReturn(loginDTO);
-//        // Act
-//        LoginDTO result = sut.findUser(username);
-//        // Assert
-//        assertEquals(result,loginDTO);
-//    }
+    @Test
+    public void testFindUserCreateCorrectStatement() throws SQLException {
+        // Arrange
+        String username = "azezsalami";
+        String password = "password";
+        LoginDTO loginDTO = new LoginDTO(username, password);
+        // Act
+        var result = sut.findUser(USERNAME);
+        // Assert
+        verify(loginDataMapper).toDTO(any());
+        verify(statement).setString(1, USERNAME);
+    }
+
+    @Test
+    public void testFindDataCreateCorrectStatement() throws SQLException {
+        // Arrange
+
+        // Act
+        sut.findData(USERNAME);
+        // Assert
+        verify(userDataMapper).toDTO(any());
+        verify(statement).setString(1, USERNAME);
+    }
+
+    @Test
+    public void testFindUserThrowsError() throws SQLException {
+        // Arrange
+
+        // Act
+        sut.findUser(USERNAME);
+        // Assert
+        verify(statement).setString(1, USERNAME);
+        doThrow(SQLException.class).when(loginDataMapper).toDTO(any());
+
+        // Run the tes
+        // Verify the results
+        Assertions.assertThrows(InternalServerErrorException.class, () -> sut.findUser(USERNAME));
+    }
+
+    @Test
+    public void testFindDataThrowsError() throws SQLException {
+        // Arrange
+
+        // Act
+        sut.findData(USERNAME);
+        // Assert
+        verify(statement).setString(1, USERNAME);
+        doThrow(SQLException.class).when(userDataMapper).toDTO(any());
+
+        // Run the tes
+        // Verify the results
+        Assertions.assertThrows(InternalServerErrorException.class, () -> sut.findData(USERNAME));
+    }
 
 }

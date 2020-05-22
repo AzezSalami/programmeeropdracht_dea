@@ -1,6 +1,6 @@
 package nl.han.oose.dea.datasource.datamapper;
 
-import nl.han.oose.dea.controllers.dto.LoginDTO;
+import nl.han.oose.dea.controller.dto.LoginDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

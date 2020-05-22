@@ -1,9 +1,7 @@
 package nl.han.oose.dea.datasource.datamapper;
 
-import nl.han.oose.dea.controllers.dto.TrackDTO;
-import nl.han.oose.dea.controllers.dto.TracksDTO;
+import nl.han.oose.dea.controller.dto.TrackDTO;
 
-import javax.sound.midi.Track;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;

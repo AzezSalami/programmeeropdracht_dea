@@ -1,9 +1,7 @@
 package nl.han.oose.dea.datasource.datamapper;
 
-import nl.han.oose.dea.controllers.dto.PlaylistDTO;
-import nl.han.oose.dea.controllers.dto.PlaylistsDTO;
-import nl.han.oose.dea.controllers.dto.TrackDTO;
-import nl.han.oose.dea.controllers.dto.TracksDTO;
+import nl.han.oose.dea.controller.dto.TrackDTO;
+import nl.han.oose.dea.controller.dto.TracksDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

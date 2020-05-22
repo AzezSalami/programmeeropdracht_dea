@@ -1,18 +1,17 @@
 package nl.han.oose.dea.datasource.dao;
 
-import nl.han.oose.dea.controllers.dto.LoginRespondeDTO;
+import nl.han.oose.dea.controller.dto.LoginRespondeDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
 
 import java.sql.*;
 
-import nl.han.oose.dea.controllers.dto.LoginDTO;
+import nl.han.oose.dea.controller.dto.LoginDTO;
 import nl.han.oose.dea.datasource.datamapper.LoginDataMapper;
 import nl.han.oose.dea.datasource.datamapper.UserDataMapper;
 
 import javax.inject.Inject;
 import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotAuthorizedException;
-import javax.ws.rs.core.Response;
 
 public class LoginDAO {
 
@@ -33,18 +32,19 @@ public class LoginDAO {
     @Inject
     public void setDatabaseConnection(DatabaseConnection databaseConnection) throws SQLException {
         this.databaseConnection = databaseConnection;
-        makeConnection();
+     //   makeConnection();
     }
 
-    private void makeConnection() throws SQLException {
-        connection = databaseConnection.getConnection();
-    }
+//    private void makeConnection() throws SQLException {
+//        connection = databaseConnection.getConnection();
+//    }
 
     public LoginDAO() {
     }
 
     public LoginDTO findUser(String username) {
         try {
+            connection = databaseConnection.getConnection();
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
@@ -56,6 +56,7 @@ public class LoginDAO {
 
     public LoginRespondeDTO findData(String username) {
         try {
+            connection = databaseConnection.getConnection();
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
