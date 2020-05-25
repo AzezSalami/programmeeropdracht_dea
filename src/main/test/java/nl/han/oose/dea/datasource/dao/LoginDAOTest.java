@@ -1,7 +1,6 @@
 package nl.han.oose.dea.datasource.dao;
 
 import nl.han.oose.dea.controller.dto.LoginDTO;
-import nl.han.oose.dea.controller.dto.LoginRespondeDTO;
 import nl.han.oose.dea.datasource.connection.DatabaseConnection;
 import nl.han.oose.dea.datasource.datamapper.LoginDataMapper;
 import nl.han.oose.dea.datasource.datamapper.UserDataMapper;
@@ -60,7 +59,7 @@ public class LoginDAOTest {
         // Act
         var result = sut.findUser(USERNAME);
         // Assert
-        verify(loginDataMapper).toDTO(any());
+        verify(loginDataMapper).mapResultSetToDTO(any());
         verify(statement).setString(1, USERNAME);
     }
 
@@ -71,7 +70,7 @@ public class LoginDAOTest {
         // Act
         sut.findData(USERNAME);
         // Assert
-        verify(userDataMapper).toDTO(any());
+        verify(userDataMapper).mapResultSetToDTO(any());
         verify(statement).setString(1, USERNAME);
     }
 
@@ -83,7 +82,7 @@ public class LoginDAOTest {
         sut.findUser(USERNAME);
         // Assert
         verify(statement).setString(1, USERNAME);
-        doThrow(SQLException.class).when(loginDataMapper).toDTO(any());
+        doThrow(SQLException.class).when(loginDataMapper).mapResultSetToDTO(any());
 
         // Run the tes
         // Verify the results
@@ -98,7 +97,7 @@ public class LoginDAOTest {
         sut.findData(USERNAME);
         // Assert
         verify(statement).setString(1, USERNAME);
-        doThrow(SQLException.class).when(userDataMapper).toDTO(any());
+        doThrow(SQLException.class).when(userDataMapper).mapResultSetToDTO(any());
 
         // Run the tes
         // Verify the results

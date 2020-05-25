@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class UserDataMapper implements DataMapper<LoginRespondeDTO> {
 
-    public LoginRespondeDTO toDTO(ResultSet resultSet) throws SQLException {
+    public LoginRespondeDTO mapResultSetToDTO(ResultSet resultSet) throws SQLException {
         LoginRespondeDTO loginRespondeDTO = new LoginRespondeDTO();
 
         while (resultSet.next()) {

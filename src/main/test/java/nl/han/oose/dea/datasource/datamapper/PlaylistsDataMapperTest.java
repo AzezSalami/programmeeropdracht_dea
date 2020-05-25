@@ -29,7 +29,7 @@ public class PlaylistsDataMapperTest {
         // Arrange
         when(resultSet.next()).thenReturn(true).thenReturn(false);
         // Act
-        List<PlaylistDTO> result = sut.toDTO(resultSet);
+        List<PlaylistDTO> result = sut.mapResultSetToDTO(resultSet);
         PlaylistsDTO playlistsDTO= new PlaylistsDTO(result,775);
 
         // Assert
@@ -44,7 +44,7 @@ public class PlaylistsDataMapperTest {
 
         // Assert
         assertThrows(SQLException.class, () -> {
-            sut.toDTO(resultSet);
+            sut.mapResultSetToDTO(resultSet);
         });
     }
 }

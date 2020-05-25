@@ -41,7 +41,7 @@ public class TrackDAO {
             statement.setString(1, token);
             statement.setInt(2, playlistId);
             ResultSet resultSet = statement.executeQuery();
-            return tracksDataMapper.toDTO(resultSet);
+            return tracksDataMapper.mapResultSetToDTO(resultSet);
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }

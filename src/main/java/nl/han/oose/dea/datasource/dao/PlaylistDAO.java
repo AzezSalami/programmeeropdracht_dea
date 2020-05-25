@@ -47,7 +47,7 @@ public class PlaylistDAO {
             PreparedStatement statement = connection.prepareStatement("select * from playlist where token =?");
             statement.setString(1, token);
             ResultSet resultSet = statement.executeQuery();
-            return playlistsDataMapper.toDTO(resultSet);
+            return playlistsDataMapper.mapResultSetToDTO(resultSet);
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }
@@ -130,7 +130,7 @@ public class PlaylistDAO {
             statement.setString(1, token);
             statement.setInt(2, id);
             ResultSet resultSet = statement.executeQuery();
-            return tracksDataMapper.toDTO(resultSet);
+            return tracksDataMapper.mapResultSetToDTO(resultSet);
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }

@@ -48,7 +48,7 @@ public class LoginDAO {
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
-            return loginDataMapper.toDTO(resultSet);
+            return loginDataMapper.mapResultSetToDTO(resultSet);
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }
@@ -60,7 +60,7 @@ public class LoginDAO {
             PreparedStatement statement = connection.prepareStatement("select * from users where username =?");
             statement.setString(1, username);
             ResultSet resultSet = statement.executeQuery();
-            return userDataMapper.toDTO(resultSet);
+            return userDataMapper.mapResultSetToDTO(resultSet);
         } catch (SQLException e) {
             throw new InternalServerErrorException();
         }

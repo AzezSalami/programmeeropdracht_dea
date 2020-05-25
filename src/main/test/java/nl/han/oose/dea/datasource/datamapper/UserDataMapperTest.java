@@ -28,7 +28,7 @@ public class UserDataMapperTest {
         // Arrange
         when(resultSet.next()).thenReturn(true).thenReturn(false);
         // Act
-        LoginRespondeDTO result = sut.toDTO(resultSet);
+        LoginRespondeDTO result = sut.mapResultSetToDTO(resultSet);
 
         // Assert
         assertEquals(LoginRespondeDTO.class, result.getClass());
@@ -43,7 +43,7 @@ public class UserDataMapperTest {
 
         // Assert
         assertThrows(SQLException.class, () -> {
-            sut.toDTO(resultSet);
+            sut.mapResultSetToDTO(resultSet);
         });
     }
 }

@@ -29,7 +29,7 @@ public class TracksDataMapperTest {
         // Arrange
         when(resultSet.next()).thenReturn(true).thenReturn(false);
         // Act
-        List<TrackDTO> result = sut.toDTO(resultSet);
+        List<TrackDTO> result = sut.mapResultSetToDTO(resultSet);
         TracksDTO tracksDTO= new TracksDTO(result);
 
         // Assert
@@ -44,7 +44,7 @@ public class TracksDataMapperTest {
 
         // Assert
         assertThrows(SQLException.class, () -> {
-            sut.toDTO(resultSet);
+            sut.mapResultSetToDTO(resultSet);
         });
     }
 

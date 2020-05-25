@@ -9,7 +9,7 @@ import java.util.List;
 
 public class TracksDataMapper implements DataMapper<List<TrackDTO>> {
     @Override
-    public List<TrackDTO> toDTO(ResultSet resultSet) throws SQLException {
+    public List<TrackDTO> mapResultSetToDTO(ResultSet resultSet) throws SQLException {
         List<TrackDTO> tracks = new ArrayList<>();
         while (resultSet.next()) {
             tracks.add(new TrackDTO(
